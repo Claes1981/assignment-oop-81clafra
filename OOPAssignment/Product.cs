@@ -9,5 +9,13 @@ public class Product
     public decimal Price { get; set; }    // decimal för pengar
     public int Quantity { get; set; }
 
-    // Metoder: CanFulfillOrder(int requestedQuantity), ReduceQuantity(int amount)
+    private bool CanFulfillOrder(int requestedQuantity)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void ReduceQuantity(int amount)
+    {
+        throw new NotImplementedException();
+    }
 }
