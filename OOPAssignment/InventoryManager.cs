@@ -7,12 +7,12 @@ public class InventoryManager
     private List<Product> products;
     private List<Order> orders;
 
-    internal void LoadProductsFromCsv(string v)
+    internal void LoadProductsFromCsv(string filePath)
     {
-        throw new NotImplementedException();
+        string[] productsArray = File.ReadAllLines(filePath);
     }
 
-    internal void LoadOrdersFromCsv(string v)
+    internal void LoadOrdersFromCsv(string filePath)
     {
         throw new NotImplementedException();
     }
@@ -22,7 +22,7 @@ public class InventoryManager
         throw new NotImplementedException();
     }
 
-    internal void SaveUpdatedProductsToCsv(string v)
+    internal void SaveUpdatedProductsToCsv(string filePath)
     {
         throw new NotImplementedException();
     }
