@@ -1,24 +1,31 @@
-﻿// See https://aka.ms/new-console-template for more information
-static void Main(string[] args)
+﻿namespace OOPAssignment;
+
+using System;
+using System.Collections.Generic;
+
+class Program
 {
-    InventoryManager manager = new InventoryManager();
-
-    try
+    static void Main(string[] args)
     {
-        // 1. Läs in data
-        manager.LoadProductsFromCsv("lager.csv");
-        manager.LoadOrdersFromCsv("ordrar.csv");
+        InventoryManager manager = new InventoryManager();
 
-        // 2. Bearbeta ordrar
-        manager.ProcessOrders();
+        try
+        {
+            // 1. Läs in data
+            manager.LoadProductsFromCsv("lager.csv");
+            manager.LoadOrdersFromCsv("ordrar.csv");
 
-        // 3. Spara resultat
-        manager.SaveUpdatedProductsToCsv("lager_uppdaterat.csv");
+            // 2. Bearbeta ordrar
+            manager.ProcessOrders();
 
-        Console.WriteLine("Lagerhantering slutförd!");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Fel uppstod: {ex.Message}");
+            // 3. Spara resultat
+            manager.SaveUpdatedProductsToCsv("lager_uppdaterat.csv");
+
+            Console.WriteLine("Lagerhantering slutförd!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fel uppstod: {ex.Message}");
+        }
     }
 }
