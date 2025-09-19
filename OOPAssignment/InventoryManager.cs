@@ -10,6 +10,21 @@ public class InventoryManager
     internal void LoadProductsFromCsv(string filePath)
     {
         string[] productsArray = File.ReadAllLines(filePath);
+        products = new List<Product>();
+        foreach (string productDataElementsString in productsArray)
+        {
+            string[] productDataElementsArray = productDataElementsString.Split(',');
+
+            // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
+            Product product = new Product
+            {
+                Name = productDataElementsArray[0],
+                Category = productDataElementsArray[1],
+                Price = decimal.Parse(productDataElementsArray[2]),
+                Quantity = int.Parse(productDataElementsArray[3])
+            };
+            products.Add(product);
+        } 
     }
 
     internal void LoadOrdersFromCsv(string filePath)
