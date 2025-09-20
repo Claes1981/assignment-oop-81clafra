@@ -9,9 +9,9 @@ public class InventoryManager
     private List<Product> products;
     private List<Order> orders;
 
-    internal void LoadProductsFromCsv(string filePath)
+    internal void LoadProductsFromCsv(string fileName)
     {
-        string[] productsArray = File.ReadAllLines(filePath);
+        string[] productsArray = File.ReadAllLines(fileName);
         products = new List<Product>();
         foreach (string productDataElementsString in productsArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
         {
@@ -29,9 +29,9 @@ public class InventoryManager
         }
     }
 
-    internal void LoadOrdersFromCsv(string filePath)
+    internal void LoadOrdersFromCsv(string fileName)
     {
-        string[] ordersArray = File.ReadAllLines(filePath);
+        string[] ordersArray = File.ReadAllLines(fileName);
         orders = new List<Order>();
         foreach (string orderDataElementsString in ordersArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
         {
@@ -74,7 +74,7 @@ public class InventoryManager
         }
     }
 
-    internal void SaveUpdatedProductsToCsv(string filePath)
+    internal void SaveUpdatedProductsToCsv(string fileName)
     {
         throw new NotImplementedException();
     }
