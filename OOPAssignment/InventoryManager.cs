@@ -26,12 +26,27 @@ public class InventoryManager
                 Quantity = int.Parse(productDataElementsArray[3])
             };
             products.Add(product);
-        } 
+        }
     }
 
     internal void LoadOrdersFromCsv(string filePath)
     {
-        throw new NotImplementedException();
+        string[] ordersArray = File.ReadAllLines(filePath);
+        orders = new List<Order>();
+        foreach (string orderDataElementsString in ordersArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
+        {
+            string[] orderDataElementsArray = orderDataElementsString.Split(',');
+
+            // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
+            Order order = new Order
+            {
+                CustomerId = orderDataElementsArray[0],
+                CustomerName = orderDataElementsArray[1],
+                ProductName = orderDataElementsArray[2],
+                QuantityOrdered = int.Parse(orderDataElementsArray[3])
+            };
+            orders.Add(order);
+        }
     }
 
     internal void ProcessOrders()
