@@ -51,7 +51,27 @@ public class InventoryManager
 
     internal void ProcessOrders()
     {
-        throw new NotImplementedException();
+        // Generated with assistance from Github Copilot, TabbyML/DeepSeekCoder-6.7B,
+        // and https://www.perplexity.ai/search/i-have-these-nested-c-loops-fo-cz0L.YKdS2m2Wc62qhpYEg
+        foreach (Order order in orders)
+        {
+            Product? foundProduct = products.Find(product => product.Name == order.ProductName);
+
+            if (foundProduct != null)
+            {
+                if (foundProduct.Quantity >= order.QuantityOrdered)
+                {
+                    foundProduct.Quantity -= order.QuantityOrdered;
+                    Console.WriteLine($"Order för {order.QuantityOrdered} av {order.ProductName} till {order.CustomerName} (ID: {order.CustomerId}) har behandlats.");
+                }
+                else
+                {
+                    Console.WriteLine($"Otillräckligt lager för {order.ProductName} för kund {order.CustomerName} (ID: {order.CustomerId}).");
+                }
+            }
+            else
+                Console.WriteLine($"Produkten {order.ProductName} finns inte i lagret för kund {order.CustomerName} (ID: {order.CustomerId}).");
+        }
     }
 
     internal void SaveUpdatedProductsToCsv(string filePath)
