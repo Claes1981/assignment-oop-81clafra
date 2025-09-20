@@ -76,7 +76,11 @@ public class InventoryManager
 
     internal void SaveUpdatedProductsToCsv(string fileName)
     {
-        throw new NotImplementedException();
+        foreach (Product product in products)
+        {
+            productsArray.
+        }
+        File.WriteAllLines(fileName,productsArray);
     }
 
 
