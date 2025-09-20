@@ -2,6 +2,8 @@
 
 // Huvudklassen som hanterar all logik
 
+using System.Globalization;
+
 public class InventoryManager
 {
     private List<Product> products;
@@ -20,7 +22,7 @@ public class InventoryManager
             {
                 Name = productDataElementsArray[0],
                 Category = productDataElementsArray[1],
-                Price = decimal.Parse(productDataElementsArray[2]),
+                Price = decimal.Parse(productDataElementsArray[2], CultureInfo.InvariantCulture), //Cred: https://stackoverflow.com/a/15897318
                 Quantity = int.Parse(productDataElementsArray[3])
             };
             products.Add(product);
