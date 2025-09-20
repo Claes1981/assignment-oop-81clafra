@@ -9,10 +9,7 @@ public class InventoryManager
 
     internal void LoadProductsFromCsv(string filePath)
     {
-        // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
-        string fullPath = Path.Combine(Path.GetFullPath(@"../OOPAssignment"), filePath);
-
-        string[] productsArray = File.ReadAllLines(fullPath);
+        string[] productsArray = File.ReadAllLines(filePath);
         products = new List<Product>();
         foreach (string productDataElementsString in productsArray)
         {
