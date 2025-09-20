@@ -11,7 +11,7 @@ public class InventoryManager
     {
         string[] productsArray = File.ReadAllLines(filePath);
         products = new List<Product>();
-        foreach (string productDataElementsString in productsArray)
+        foreach (string productDataElementsString in productsArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
         {
             string[] productDataElementsArray = productDataElementsString.Split(',');
 
