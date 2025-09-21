@@ -82,7 +82,7 @@ public class InventoryManager
             string[] productDataElementsArray = new string[4];
             productDataElementsArray[0] = products[productIndex].Category;
             productDataElementsArray[1] = products[productIndex].Name;
-            productDataElementsArray[2] = products[productIndex].Price.ToString("0.00");
+            productDataElementsArray[2] = products[productIndex].Price.ToString("0.00",CultureInfo.InvariantCulture);
             productDataElementsArray[3] = products[productIndex].Quantity.ToString();
 
             productsArray[productIndex] = String.Join(",", productDataElementsArray); // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
