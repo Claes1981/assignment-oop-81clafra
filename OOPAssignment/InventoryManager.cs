@@ -17,14 +17,20 @@ public class InventoryManager
         {
             string[] productDataElementsArray = productDataElementsString.Split(',');
 
-            // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
-            Product product = new Product
+            if (decimal.TryParse(productDataElementsArray[2], CultureInfo.InvariantCulture, out decimal price)
+                && int.TryParse(productDataElementsArray[3], out int quantity)) //Cred: https://stackoverflow.com/a/15897318
             {
-                Name = productDataElementsArray[0],
-                Category = productDataElementsArray[1],
-                Price = decimal.Parse(productDataElementsArray[2], CultureInfo.InvariantCulture), //Cred: https://stackoverflow.com/a/15897318
-                Quantity = int.Parse(productDataElementsArray[3])
-            };
+                // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
+                Product product = new Product
+                {
+                    Name = productDataElementsArray[0],
+                    Category = productDataElementsArray[1],
+                    Price = price,
+                    Quantity = quantity,
+                };
+            }
+            else
+            {}
             products.Add(product);
         }
     }
@@ -84,7 +90,7 @@ public class InventoryManager
 
     internal void SaveUpdatedProductsToCsv(string fileName)
     {
-        string[] productsArray = new string[products.Count+1]; //Add 1 extra element for headings
+        string[] productsArray = new string[products.Count + 1]; //Add 1 extra element for headings
 
         productsArray[0] = "Name,Category,Price,Quantity";
 
@@ -96,9 +102,9 @@ public class InventoryManager
             productDataElementsArray[2] = products[productIndex].Price.ToString("0.00", CultureInfo.InvariantCulture);
             productDataElementsArray[3] = products[productIndex].Quantity.ToString();
 
-            productsArray[productIndex+1] = String.Join(",", productDataElementsArray); // Add 1 to index since first element is headings
+            productsArray[productIndex + 1] = String.Join(",", productDataElementsArray); // Add 1 to index since first element is headings
         }
-        File.WriteAllLines(fileName,productsArray);
+        File.WriteAllLines(fileName, productsArray);
     }
 
 
