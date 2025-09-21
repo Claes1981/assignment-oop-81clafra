@@ -84,16 +84,19 @@ public class InventoryManager
 
     internal void SaveUpdatedProductsToCsv(string fileName)
     {
-        string[] productsArray = new string[products.Count];
-        for (int productIndex=0; productIndex<products.Count; productIndex++)
+        string[] productsArray = new string[products.Count+1]; //Add 1 extra element for headings
+
+        productsArray[0] = "Name,Category,Price,Quantity";
+
+        for (int productIndex = 0; productIndex < products.Count; productIndex++)
         {
             string[] productDataElementsArray = new string[4];
             productDataElementsArray[0] = products[productIndex].Category;
             productDataElementsArray[1] = products[productIndex].Name;
-            productDataElementsArray[2] = products[productIndex].Price.ToString("0.00",CultureInfo.InvariantCulture);
+            productDataElementsArray[2] = products[productIndex].Price.ToString("0.00", CultureInfo.InvariantCulture);
             productDataElementsArray[3] = products[productIndex].Quantity.ToString();
 
-            productsArray[productIndex] = String.Join(",", productDataElementsArray); // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
+            productsArray[productIndex+1] = String.Join(",", productDataElementsArray); // Add 1 to index since first element is headings
         }
         File.WriteAllLines(fileName,productsArray);
     }
