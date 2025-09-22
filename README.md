@@ -1,104 +1,148 @@
-# Inlämningsuppgift: Spelprojekt
+# [assignment-oop-81clafra] - [Claes Fransson]
 
-**Inlämning:** 26 september 2025
+**Valt alternativ:** Lagerhanteringssystem
 
-## Mål
+## Projektbeskrivning
 
-Målet med denna uppgift är att du ska tillämpa dina kunskaper om listor, loopar, if-satser och klasser för att bygga ett fungerande program. Du ska visa att du kan strukturera din kod på ett objektorienterat sätt och lösa ett större problem steg för steg.
+_Skriv en kort beskrivning (2-3 meningar) om vilket alternativ du har valt och vad ditt program gör._
 
-## Uppgift
+## Screenshot
 
-Välj ett av de tre projekten och implementera det. De tre alternativen är:
+_Lägg till minst en skärmbild som visar ditt program i aktion. Detta gör ditt projekt mer intressant och hjälper andra att förstå vad det gör._
 
-- **Havsforskarna** (se `sea_stuff.md`): Ett strategispel där du ska hitta dolda formationer på havsbotten.
-- **Textäventyr / Dungeon Crawler** (se `dungeon_crawler.md`): Ett interaktivt textbaserat äventyrsspel.
-- **Lagerhanteringssystem** (se `storage.md`): En simulation av ett lagersystem som hanterar produkter och ordrar via filer.
+![Skärmbild av programmet](screenshot.png)
+_Kort beskrivning av vad som visas i bilden_
 
-Läs den specifika projektbeskrivningen för det alternativ du väljer för detaljerade krav.
+### Så här lägger du till screenshots:
 
-## Krav för inlämning (gäller alla projekt)
+1. Ta en skärmbild när ditt program körs (använd `Print Screen` eller `Snipping Tool`)
+2. Spara bilden som `screenshot.png` i din projektmapp
+3. Committa och pusha bilden till GitHub tillsammans med din kod
+4. Bilden visas automatiskt i din README
 
-Oavsett vilket projekt du väljer ska din inlämning, utöver programmets kod, innehålla följande delar:
+_Tips: Du kan lägga till flera bilder för att visa olika delar av programmet, t.ex. spelstart, gameplay och slutskärm._
 
-### 1) Git-repository
+## Hur man startar programmet
 
-- Projektet ska finnas i ett Git-repository på [Campus Mölndals GitHub](https://github.com/orgs/Campus-Molndal-CLO25/repositories).
-- Namnge ditt repository enligt mönstret: `assignment-oop-GAFEANVÄNDARNAMN` (t.ex. `assignment-oop-kalle-andersson`).
-- Lämna in länken till ditt repository.
-- Ladda även upp en zip-fil med hela projektet till klassrummet.
+### Förutsättningar
 
-### 2) README.md
+- .NET 9.0 eller senare
+- En av följande utvecklingsmiljöer: Visual Studio, JetBrains Rider, Visual Studio Code, eller terminal/kommandotolk
 
-- Skapa en `README.md` i projektets rot. **Använd mallen `README-mall.md` som grund.**
-- Din README måste innehålla:
-  - Kort beskrivning av programmet och vilket alternativ du valt
-  - **Minst ett screenshot** av ditt program i körning
-  - Tydliga instruktioner för hur man startar och använder programmet
-  - Länk till ditt GitHub-repo
-- **Ta bort alla placeholders** (t.ex. `[Projektnamn]`) och ersätt med din egen text.
+### Klona projektet
 
-### 3) reflection.md
-
-- Skapa en `reflection.md` i projektet och **använd `reflection-mall.md` som grund.**
-- Besvara frågorna i mallen:
-  - **För Godkänt:** Besvara G-frågorna (Planering, Problem, Stolthet)
-  - **För Väl Godkänt:** Besvara både G- och VG-frågorna utförligt
-- **Ta bort alla placeholders** (`[Ditt svar här...]`) och exempel i kursiv stil när du skriver dina svar.
-
-## Tips
-
-- Börja tidigt och gör en minimal fungerande version (MVP) först.
-- Dela upp projektet i tydliga klasser och ansvar.
-- Skriv små tester eller kör manuella scenarier för att validera logik under arbetets gång.
-- Ta screenshots under utvecklingen så du har material till README.
-
-## Hjälp och samarbete
-
-### Tillåtet stöd
-
-Det är **helt okej** att:
-
-- Fråga läraren om hjälp och vägledning
-- Diskutera idéer och lösningsstrategier med kurskamrater
-- Använda AI (ChatGPT, Claude, etc.) för att:
-  - Förklara koncept du inte förstår
-  - Få förslag på hur du kan lösa specifika delproblem
-  - Hjälpa med felsökning av din egen kod
-  - Få kodgranskningar och förbättringsförslag
-
-### Dokumentationskrav
-
-Om du använder kod som kommer från andra källor än dig själv måste du **tydligt dokumentera** detta:
-
-```csharp
-// Denna metod för koordinatkonvertering är inspirerad av hjälp från ChatGPT
-// för att lösa problemet med att omvandla "A5" till array-index
-public static int[] ParseCoordinates(string input)
-{
-    // Min egen implementation baserat på förslaget...
-}
+```bash
+git clone https://github.com/orgs/Campus-Molndal-CLO25/repositories/assignment-oop-81clafra
+cd assignment-oop-81clafra
 ```
 
-Eller i din `reflection.md`:
+_Exempel: Om din GAFE-mail är marmed02@gafe.molndal.se, blir ditt repo assignment-oop-marmed02_
 
-> "Jag fick hjälp av AI för att förstå hur Dictionary fungerar och för att lösa ett specifikt problem med felhantering i min CSV-läsning."
-> Kalle hjälpte mig att förstå hur jag kunde strukturera mina klasser bättre för att separera ansvar.
+### Starta programmet
 
-### Vad som räknas som plagiat
+#### Visual Studio
 
-**Inte acceptabelt:**
+1. Öppna `assignment-oop-81clafra.sln` eller projektmappen
+2. Tryck `F5` eller klicka på "Start" (grön triangel)
 
-- Låta AI eller någon annan skriva hela klasser eller stora delar av din kod
-- Kopiera kod från guider, Stack Overflow eller GitHub utan att förstå vad den gör
-- Låta kurskamrater göra ditt arbete åt dig
-- Använda färdiga lösningar på hela uppgiften
+#### JetBrains Rider
 
-**Riktlinjen:** Du ska kunna förklara och förstå varje rad kod du lämnar in. Om du inte kan förklara hur din kod fungerar under presentation/diskussion, räknas det som plagiat.
+1. Öppna projektmappen genom "File → Open"
+2. Tryck `Ctrl+F5` eller klicka på "Run" (grön triangel)
 
-### Osäker på gränsen?
+#### Visual Studio Code
 
-Fråga läraren! Det är alltid bättre att fråga i förväg än att riskera misstankar om fusk.
+1. Öppna projektmappen: `code .`
+2. Installera C# Dev Kit-tillägget om det saknas
+3. Tryck `F5` eller använd "Run → Start Debugging"
+
+#### Terminal/Kommandotolk
+
+```bash
+dotnet run
+```
+
+Placera filen för lagersdata, lager.csv, och filen med ordrar, ordrar.csv, i samma katalog som 
+du kör programmet. 
+
+## Hur man använder programmet
+
+_Beskriv kortfattat hur användaren interagerar med ditt program. Ge konkreta exempel på kommandon eller val._
+
+**Exempel:**
+
+- För att skicka en sond: Skriv koordinater som "A5" eller "B7"
+- För att gå mellan rum: Skriv "gå norr" eller "syd"
+- Programmet läser automatiskt CSV-filer från projektmappen
+
+## Funktioner
+
+_Lista de huvudsakliga funktionerna ditt program har._
+
+### Grundfunktioner
+
+- [ ] [Funktion 1]
+- [ ] [Funktion 2]
+- [ ] [Funktion 3]
+
+### Extra funktioner (för VG)
+
+- [ ] [VG-funktion om implementerad]
+
+## Projektstruktur
+
+```
+projektmapp/
+├── Program.cs          # Huvudprogram
+├── InventoryManager.cs # Klasser
+├── Order.cs
+├── Product.cs
+├── README.md          # Denna fil
+├── reflection.md      # Reflektion över projektet
+├── lager.csv          # Datafiler
+└── ordrar.csv
+```
+
+## Teknisk information
+
+- **Programmeringsspråk:** C#
+- **Framework:** .NET 9.0
+- **Utvecklingsmiljö:** [Visual Studio Code / Fedora Linux]
+
+## Spara projektet för framtiden
+
+När du är klar och nöjd med ditt projekt, rekommenderas du att "forka" (kopiera) det till ditt privata GitHub-konto. Detta skapar en permanent kopia som du kan visa för framtida arbetsgivare som en del av din portfolio.
+
+### Så här forkar du projektet:
+
+1. **Gå till ditt projekt** på GitHub: https://github.com/orgs/Campus-Molndal-CLO25/repositories/assignment-oop-[ditt-username]
+
+2. **Klicka på "Fork"** (längst upp till höger på sidan)
+
+3. **Välj ditt privata konto** som destination för fork:en
+
+4. **Uppdatera beskrivningen** i din fork:
+
+   - Gå till din fork: `https://github.com/[ditt-privata-username]/assignment-oop-[ditt-username]`
+   - Klicka på kugghjulet (Settings)
+   - Lägg till en beskrivning som: "C# OOP project - Ocean research game built during studies at Campus Mölndal"
+   - Lägg till topics/tags som: `csharp`, `oop`, `console-game`, `dotnet`
+
+5. **Gör en sista uppdatering** av README.md i din fork och ändra länken under "GitHub Repository" till din nya fork
+
+### Varför är detta viktigt?
+
+- **Portfolio:** Visar dina programmeringsfärdigheter för potentiella arbetsgivare
+- **Permanent kopia:** Skolans repositories kan tas bort efter kursen
+- **Progression:** Du kan se tillbaka på ditt arbete och hur du utvecklats
+- **Referens:** Användbart att ha tillgång till din egen kod för framtida projekt
+
+## Länkar
+
+- **GitHub Repository:** https://github.com/orgs/Campus-Molndal-CLO25/repositories/assignment-oop-[ditt-username]
+- **Din privata fork:** (uppdatera denna länk efter att du forkat)
+- **Kurshemsida:** [länk om relevant]
 
 ---
 
-_Lycka till med ditt projekt! Kom ihåg att fokusera på att få grundfunktionaliteten att fungera innan du går vidare till VG-funktionerna._
+_Skapad som del av kursen "Grundläggande objektorienterad programmering i C#" vid Yrkeshögskolan Campus Mölndal._
