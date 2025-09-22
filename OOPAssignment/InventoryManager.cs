@@ -28,10 +28,11 @@ public class InventoryManager
                     Price = price,
                     Quantity = quantity,
                 };
+                products.Add(product);
             }
             else
-            {}
-            products.Add(product);
+            { }
+            
         }
     }
 
