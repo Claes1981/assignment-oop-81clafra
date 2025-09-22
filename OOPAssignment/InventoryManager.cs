@@ -15,23 +15,31 @@ public class InventoryManager
         products = new List<Product>();
         foreach (string productDataElementsString in productsArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
         {
+
             string[] productDataElementsArray = productDataElementsString.Split(',');
 
-            if (decimal.TryParse(productDataElementsArray[2], CultureInfo.InvariantCulture, out decimal price)
-                && int.TryParse(productDataElementsArray[3], out int quantity)) //Cred: https://stackoverflow.com/a/15897318
+            if (productDataElementsArray.Length < 4)
             {
-                // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
-                Product product = new Product
-                {
-                    Name = productDataElementsArray[0],
-                    Category = productDataElementsArray[1],
-                    Price = price,
-                    Quantity = quantity,
-                };
-                products.Add(product);
+                Console.WriteLine($"Uppgift saknas för produkten {productDataElementsArray[0]}.");
+                Console.WriteLine("Vänligen kontrollera lagerfilen.");
+                continue;
             }
-            else
-            { Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}"); }
+
+            if (decimal.TryParse(productDataElementsArray[2], CultureInfo.InvariantCulture, out decimal price)
+                    && int.TryParse(productDataElementsArray[3], out int quantity)) //Cred: https://stackoverflow.com/a/15897318
+                {
+                    // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
+                    Product product = new Product
+                    {
+                        Name = productDataElementsArray[0],
+                        Category = productDataElementsArray[1],
+                        Price = price,
+                        Quantity = quantity,
+                    };
+                    products.Add(product);
+                }
+                else
+                { Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}"); }
 
         }
     }
