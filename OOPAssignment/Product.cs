@@ -11,11 +11,11 @@ public class Product
 
     private bool CanFulfillOrder(int requestedQuantity)
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException(); //TODO
     }
 
     private void ReduceQuantity(int amount)
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException(); //TODO
     }
 }
