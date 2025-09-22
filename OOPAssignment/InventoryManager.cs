@@ -11,6 +11,8 @@ public class InventoryManager
 
     internal void LoadProductsFromCsv(string fileName)
     {
+        Console.WriteLine($"Läser produkter från {fileName}...");
+
         string[] productsArray = File.ReadAllLines(fileName);
         products = new List<Product>();
         foreach (string productDataElementsString in productsArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
@@ -27,25 +29,29 @@ public class InventoryManager
 
             if (decimal.TryParse(productDataElementsArray[2], CultureInfo.InvariantCulture, out decimal price)
                     && int.TryParse(productDataElementsArray[3], out int quantity)) //Cred: https://stackoverflow.com/a/15897318
+            {
+                // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
+                Product product = new Product
                 {
-                    // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
-                    Product product = new Product
-                    {
-                        Name = productDataElementsArray[0],
-                        Category = productDataElementsArray[1],
-                        Price = price,
-                        Quantity = quantity,
-                    };
-                    products.Add(product);
-                }
-                else
-                { Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}"); }
+                    Name = productDataElementsArray[0],
+                    Category = productDataElementsArray[1],
+                    Price = price,
+                    Quantity = quantity,
+                };
+                products.Add(product);
+            }
+            else
+            { Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}"); }
 
         }
+        Console.WriteLine($"Totalt {products.Count} produkter inlästa");
+        Console.WriteLine();
     }
 
     internal void LoadOrdersFromCsv(string fileName)
     {
+        Console.WriteLine($"Läser in ordrar från {fileName}...");
+
         string[] ordersArray = File.ReadAllLines(fileName);
         orders = new List<Order>();
         foreach (string orderDataElementsString in ordersArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
@@ -62,12 +68,15 @@ public class InventoryManager
             };
             orders.Add(order);
         }
+        Console.WriteLine();
     }
 
     internal void ProcessOrders()
     {
         int successfulOrders = 0;
         int unsuccessfulOrders = 0;
+
+        Console.WriteLine("Bearbetar ordrar...");
 
         // Generated with assistance from Github Copilot, TabbyML/DeepSeekCoder-6.7B,
         // and https://www.perplexity.ai/search/i-have-these-nested-c-loops-fo-cz0L.YKdS2m2Wc62qhpYEg
@@ -98,10 +107,13 @@ public class InventoryManager
         Console.WriteLine("Orderbearbetning slutförd");
         Console.WriteLine($"- {successfulOrders} ordrar skickade");
         Console.WriteLine($"- {unsuccessfulOrders} ordrar kunde inte skickas.");
+        Console.WriteLine();
     }
 
     internal void SaveUpdatedProductsToCsv(string fileName)
     {
+        Console.WriteLine($"Sparar uppdaterat lager till {fileName}...");
+
         string[] productsArray = new string[products.Count + 1]; //Add 1 extra element for headings
 
         productsArray[0] = "Name,Category,Price,Quantity";
@@ -117,6 +129,9 @@ public class InventoryManager
             productsArray[productIndex + 1] = String.Join(",", productDataElementsArray); // Add 1 to index since first element is headings
         }
         File.WriteAllLines(fileName, productsArray);
+
+        Console.WriteLine("Klart!");
+        Console.WriteLine();
     }
 }
 

@@ -11,6 +11,9 @@ class Program
 
         try
         {
+            Console.WriteLine("=== LAGERHANTERINGSSYSTEM ===");
+            Console.WriteLine();
+
             // 1. Läs in data
             manager.LoadProductsFromCsv("lager.csv");
             manager.LoadOrdersFromCsv("ordrar.csv");
