@@ -31,8 +31,8 @@ public class InventoryManager
                 products.Add(product);
             }
             else
-            { }
-            
+            { Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}"); }
+
         }
     }
 
@@ -107,7 +107,7 @@ public class InventoryManager
         }
         File.WriteAllLines(fileName, productsArray);
     }
-
-
-
 }
+
+
+
