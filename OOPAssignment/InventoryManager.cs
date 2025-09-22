@@ -90,7 +90,10 @@ public class InventoryManager
                 }
             }
             else
+            {
                 Console.WriteLine($"Produkten {order.ProductName} finns inte i lagret för kund {order.CustomerName} (ID: {order.CustomerId}).");
+                unsuccessfulOrders++;
+            }
         }
         Console.WriteLine("Orderbearbetning slutförd");
         Console.WriteLine($"- {successfulOrders} ordrar skickade");
