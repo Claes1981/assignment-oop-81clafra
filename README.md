@@ -1,4 +1,4 @@
-# [assignment-oop-81clafra] - [Claes Fransson]
+# assignment-oop-81clafra - Claes Fransson
 
 **Valt alternativ:** Lagerhanteringssystem
 
@@ -36,8 +36,6 @@ git clone https://github.com/orgs/Campus-Molndal-CLO25/repositories/assignment-o
 cd assignment-oop-81clafra
 ```
 
-_Exempel: Om din GAFE-mail är marmed02@gafe.molndal.se, blir ditt repo assignment-oop-marmed02_
-
 ### Starta programmet
 
 #### Visual Studio
@@ -62,7 +60,7 @@ _Exempel: Om din GAFE-mail är marmed02@gafe.molndal.se, blir ditt repo assignme
 dotnet run
 ```
 
-Placera filen för lagersdata, lager.csv, och filen med ordrar, ordrar.csv, i samma katalog som 
+Placera filen för lagersdata, `lager.csv`, och filen med ordrar, `ordrar.csv`, i samma katalog som 
 du kör programmet. 
 
 ## Hur man använder programmet
@@ -92,7 +90,7 @@ _Lista de huvudsakliga funktionerna ditt program har._
 ## Projektstruktur
 
 ```
-projektmapp/
+OOPAssignment/
 ├── Program.cs          # Huvudprogram
 ├── InventoryManager.cs # Klasser
 ├── Order.cs
@@ -107,7 +105,7 @@ projektmapp/
 
 - **Programmeringsspråk:** C#
 - **Framework:** .NET 9.0
-- **Utvecklingsmiljö:** [Visual Studio Code / Fedora Linux]
+- **Utvecklingsmiljö:** [Visual Studio Code + TabbyML / Fedora Linux]
 
 ## Spara projektet för framtiden
 
