@@ -90,15 +90,17 @@ _Lista de huvudsakliga funktionerna ditt program har._
 ## Projektstruktur
 
 ```
-OOPAssignment/
-├── Program.cs          # Huvudprogram
-├── InventoryManager.cs # Klasser
-├── Order.cs
-├── Product.cs
-├── README.md          # Denna fil
-├── reflection.md      # Reflektion över projektet
-├── lager.csv          # Datafiler
-└── ordrar.csv
+assignment-oop-81clafra/
+├── OOPAssignment/
+│   ├── Program.cs          # Huvudprogram
+│   ├── InventoryManager.cs # Klasser
+│   ├── Order.cs
+│   ├── Product.cs
+│   ├── lager.csv           # Datafiler
+│   └── ordrar.csv
+├── README.md               # Denna fil
+├── reflection.md           # Reflektion över projektet
+└── LICENSE
 ```
 
 ## Teknisk information
