@@ -58,15 +58,29 @@ public class InventoryManager
         {
             string[] orderDataElementsArray = orderDataElementsString.Split(',');
 
-            // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
-            Order order = new Order
+            if (orderDataElementsArray.Length < 4)
             {
-                CustomerId = orderDataElementsArray[0],
-                CustomerName = orderDataElementsArray[1],
-                ProductName = orderDataElementsArray[2],
-                QuantityOrdered = int.Parse(orderDataElementsArray[3])
-            };
-            orders.Add(order);
+                Console.WriteLine($"Uppgift saknas för kunden {orderDataElementsArray[1]}.");
+                Console.WriteLine("Vänligen kontrollera orderfilen.");
+                continue;
+            }
+
+            if (int.TryParse(orderDataElementsArray[3], out int orderQuantity)) //Cred: https://stackoverflow.com/a/15897318
+            {
+
+                // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
+                Order order = new Order
+                {
+                    CustomerId = orderDataElementsArray[0],
+                    CustomerName = orderDataElementsArray[1],
+                    ProductName = orderDataElementsArray[2],
+                    QuantityOrdered = orderQuantity,
+                };
+                orders.Add(order);
+            }
+            else
+                Console.WriteLine($"Fel format i datafil på antal för order från {orderDataElementsArray[1]}, {orderDataElementsArray[2]}.");
+
         }
         Console.WriteLine();
     }
