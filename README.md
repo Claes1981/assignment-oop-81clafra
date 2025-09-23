@@ -117,4 +117,4 @@ assignment-oop-81clafra/
 
 ---
 
-_Skapad som del av kursen "Grundläggande objektorienterad programmering i C#" vid Yrkeshögskolan Campus Mölndal._
+_Skapad som del av kursen "Grundläggande objektorienterad programmering i C#" vid Yrkeshögskolan campus Mölndal._
