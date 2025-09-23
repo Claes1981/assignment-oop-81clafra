@@ -4,7 +4,7 @@
 
 ## Projektbeskrivning
 
-För den här inlämningsuppgiften i kursen Grundläggande objektorienterad programmering i C# på Yrkeshögskolan campus Mölndal valde jag alternativet "Lagerhanteringssystem". 
+För den här inlämningsuppgiften i kursen _Grundläggande objektorienterad programmering i C#_ på _Yrkeshögskolan campus Mölndal_ valde jag alternativet _"Lagerhanteringssystem"_. 
 Programmet läser från datafiler in aktuellt lagersaldo och inkomna ordrar, behandlar ordrarna, och skriver sedan ut ett uppdaterat lagersaldo till fil.
 
 ## Screenshot
@@ -69,7 +69,7 @@ du kör programmet.
 
 Spara din data för lager och ordrar i comma-separated values-filer enligt format nedan:
 
-### lager.csv (input)
+### lager.csv
 
 ```
 Name,Category,Price,Quantity
@@ -80,7 +80,7 @@ Office-stol,Furniture,2499.00,6
 Kaffemugg,Kitchen,79.00,50
 ```
 
-### ordrar.csv (input)
+### ordrar.csv
 
 ```
 CustomerId,CustomerName,ProductName,QuantityOrdered
@@ -92,8 +92,6 @@ CUST005,Emma Johansson,Kaffemugg,5
 ```
 
 ## Funktioner
-
-_Lista de huvudsakliga funktionerna ditt program har._
 
 ### Grundfunktioner
 
@@ -121,7 +119,7 @@ assignment-oop-81clafra/
 
 - **Programmeringsspråk:** C#
 - **Framework:** .NET 9.0
-- **Utvecklingsmiljö:** [Visual Studio Code + TabbyML / Fedora Linux]
+- **Utvecklingsmiljö:** Visual Studio Code / Fedora Linux
 
 
 ## Länkar
