@@ -27,16 +27,16 @@ public class InventoryManager
                 continue;
             }
 
-            if (decimal.TryParse(productDataElementsArray[2], CultureInfo.InvariantCulture, out decimal price)
-                    && int.TryParse(productDataElementsArray[3], out int quantity)) //Cred: https://stackoverflow.com/a/15897318
+            if (decimal.TryParse(productDataElementsArray[2], CultureInfo.InvariantCulture, out decimal productPrice)
+                    && int.TryParse(productDataElementsArray[3], out int productQuantity)) //Cred: https://stackoverflow.com/a/15897318
             {
                 // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
                 Product product = new Product
                 {
                     Name = productDataElementsArray[0],
                     Category = productDataElementsArray[1],
-                    Price = price,
-                    Quantity = quantity,
+                    Price = productPrice,
+                    Quantity = productQuantity,
                 };
                 products.Add(product);
             }
