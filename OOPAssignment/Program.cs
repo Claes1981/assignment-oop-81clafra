@@ -14,14 +14,14 @@ class Program
             Console.WriteLine("=== LAGERHANTERINGSSYSTEM ===");
             Console.WriteLine();
 
-            // 1. Läs in data
+            // 1. Read data
             manager.LoadProductsFromCsv("lager.csv");
             manager.LoadOrdersFromCsv("ordrar.csv");
 
-            // 2. Bearbeta ordrar
+            // 2. Process the orders   
             manager.ProcessOrders();
 
-            // 3. Spara resultat
+            // 3. Save resulting supply
             manager.SaveUpdatedProductsToCsv("lager_uppdaterat.csv");
 
             Console.WriteLine("Lagerhantering slutförd!");

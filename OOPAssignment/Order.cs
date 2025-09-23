@@ -1,9 +1,5 @@
-// See https://aka.ms/new-console-template for more information
 
-
-
-
-// Representerar en enskild kundorder
+// Represents a single customer order.
 public class Order
 {
     public string CustomerId { get; set; }

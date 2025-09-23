@@ -1,6 +1,4 @@
-// See https://aka.ms/new-console-template for more information
-
-// Huvudklassen som hanterar all logik
+// Main class which handles all logic
 
 using System.Globalization;
 
