@@ -9,19 +9,8 @@ Programmet läser från datafiler in aktuellt lagersaldo och inkomna ordrar, beh
 
 ## Screenshot
 
-_Lägg till minst en skärmbild som visar ditt program i aktion. Detta gör ditt projekt mer intressant och hjälper andra att förstå vad det gör._
-
 ![Skärmbild av programmet](screenshot.png)
-_Kort beskrivning av vad som visas i bilden_
-
-### Så här lägger du till screenshots:
-
-1. Ta en skärmbild när ditt program körs (använd `Print Screen` eller `Snipping Tool`)
-2. Spara bilden som `screenshot.png` i din projektmapp
-3. Committa och pusha bilden till GitHub tillsammans med din kod
-4. Bilden visas automatiskt i din README
-
-_Tips: Du kan lägga till flera bilder för att visa olika delar av programmet, t.ex. spelstart, gameplay och slutskärm._
+_Exempel på utskrift vid en enstaka körning av programmet_
 
 ## Hur man startar programmet
 
