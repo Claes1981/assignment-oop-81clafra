@@ -4,8 +4,8 @@ using System.Globalization;
 
 public class InventoryManager
 {
-    private List<Product>? products;
-    private List<Order>? orders;
+    private List<Product>? products = new();
+    private List<Order>? orders = new();
 
     internal void LoadProductsFromCsv(string fileName)
     {
