@@ -103,7 +103,7 @@ public class InventoryManager
                     if (foundProduct.Quantity >= order.QuantityOrdered)
                     {
                         foundProduct.Quantity -= order.QuantityOrdered;
-                        Console.WriteLine($"Order för {order.QuantityOrdered} av {order.ProductName} till {order.CustomerName} (ID: {order.CustomerId}) har behandlats och skickas.");
+                        Console.WriteLine($"Order för {order.QuantityOrdered} st av {order.ProductName} till {order.CustomerName} (ID: {order.CustomerId}) har behandlats och skickas.");
                         successfulOrders++;
                     }
                     else
