@@ -145,8 +145,8 @@ public class InventoryManager
             for (int productIndex = 0; productIndex < products.Count; productIndex++)
             {
                 string[] productDataElementsArray = new string[4];
-                productDataElementsArray[0] = products[productIndex].Category;
-                productDataElementsArray[1] = products[productIndex].Name;
+                productDataElementsArray[0] = products[productIndex].Category??"";
+                productDataElementsArray[1] = products[productIndex].Name??"";
                 productDataElementsArray[2] = products[productIndex].Price.ToString("0.00", CultureInfo.InvariantCulture);
                 productDataElementsArray[3] = products[productIndex].Quantity.ToString();
 
