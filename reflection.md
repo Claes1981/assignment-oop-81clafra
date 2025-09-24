@@ -1,10 +1,5 @@
 # Reflektion över assignment-oop-81clafra
 
-**VIKTIGT:** Ersätt `[Projektnamn]` i rubriken med ditt faktiska projektnamn. Ta bort alla placeholders som `[Ditt svar här...]`
-och exempel i kursiv stil när du skriver dina egna svar.
-
-_Skriv dina svar under varje rubrik._
-
 ## Planering
 
 Hur planerade du ditt arbete från start till mål?
