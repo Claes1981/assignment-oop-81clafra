@@ -9,7 +9,7 @@ public class InventoryManager
 
     internal void LoadProductsFromCsv(string fileName)
     {
-        Console.WriteLine($"Läser produkter från {fileName}...");
+        Console.WriteLine($"Läser in produkter från {fileName}...");
 
         string[] productsArray = File.ReadAllLines(fileName);
         products = new List<Product>();
@@ -39,7 +39,7 @@ public class InventoryManager
                 products.Add(product);
             }
             else
-            { Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}"); }
+                Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}");
 
         }
         Console.WriteLine($"Totalt {products.Count} produkter inlästa");
