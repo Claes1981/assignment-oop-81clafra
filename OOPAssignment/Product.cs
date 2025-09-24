@@ -4,8 +4,8 @@
 // Represents a commodity in the supply
 public class Product
 {
-    public string Name { get; set; }
-    public string Category { get; set; }
+    public string? Name { get; set; }
+    public string? Category { get; set; }
     public decimal Price { get; set; }    // decimal for handling decimal prices
     public int Quantity { get; set; }
 
