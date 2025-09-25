@@ -8,10 +8,10 @@ public class InventoryManager
     private List<Order>? orders = new();
 
     const int PRODUCT_NAME_INDEX = 0;
-        const int PRODUCT_CATEGORY_INDEX = 1;
-        const int PRODUCT_PRICE_INDEX = 2;
-        const int PRODUCT_QUANTITY_INDEX = 3;
-        const int NUMBER_OF_EXPECTED_PRODUCT_DATA_ELEMENTS = 4;
+    const int PRODUCT_CATEGORY_INDEX = 1;
+    const int PRODUCT_PRICE_INDEX = 2;
+    const int PRODUCT_QUANTITY_INDEX = 3;
+    const int NUMBER_OF_EXPECTED_PRODUCT_DATA_ELEMENTS = 4;
 
     internal void LoadProductsFromCsv(string fileName)
     {
@@ -104,7 +104,7 @@ public class InventoryManager
 
         // Generated with assistance from Github Copilot, TabbyML/DeepSeekCoder-6.7B,
         // and https://www.perplexity.ai/search/i-have-these-nested-c-loops-fo-cz0L.YKdS2m2Wc62qhpYEg
-        if (orders != null && products!= null)
+        if (orders != null && products != null)
         {
             foreach (Order order in orders)
             {
@@ -157,8 +157,8 @@ public class InventoryManager
             for (int productIndex = 0; productIndex < products.Count; productIndex++)
             {
                 string[] productDataElementsArray = new string[4];
-                productDataElementsArray[PRODUCT_NAME_INDEX] = products[productIndex].Name??"";
-                productDataElementsArray[PRODUCT_CATEGORY_INDEX] = products[productIndex].Category??"";
+                productDataElementsArray[PRODUCT_NAME_INDEX] = products[productIndex].Name ?? "";
+                productDataElementsArray[PRODUCT_CATEGORY_INDEX] = products[productIndex].Category ?? "";
                 productDataElementsArray[PRODUCT_PRICE_INDEX] = products[productIndex].Price.ToString("0.00", CultureInfo.InvariantCulture);
                 productDataElementsArray[PRODUCT_QUANTITY_INDEX] = products[productIndex].Quantity.ToString();
 
