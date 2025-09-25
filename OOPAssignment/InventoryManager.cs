@@ -7,6 +7,12 @@ public class InventoryManager
     private List<Product>? products = new();
     private List<Order>? orders = new();
 
+    const int PRODUCT_NAME_INDEX = 0;
+        const int PRODUCT_CATEGORY_INDEX = 1;
+        const int PRODUCT_PRICE_INDEX = 2;
+        const int PRODUCT_QUANTITY_INDEX = 3;
+        const int NUMBER_OF_EXPECTED_PRODUCT_DATA_ELEMENTS = 4;
+
     internal void LoadProductsFromCsv(string fileName)
     {
         Console.WriteLine($"Läser in produkter från {fileName}...");
@@ -18,28 +24,28 @@ public class InventoryManager
 
             string[] productDataElementsArray = productDataElementsString.Split(',');
 
-            if (productDataElementsArray.Length < 4)
+            if (productDataElementsArray.Length < NUMBER_OF_EXPECTED_PRODUCT_DATA_ELEMENTS)
             {
-                Console.WriteLine($"Uppgift saknas för produkten {productDataElementsArray[0]}.");
+                Console.WriteLine($"Uppgift saknas för produkten {productDataElementsArray[PRODUCT_NAME_INDEX]}.");
                 Console.WriteLine("Vänligen kontrollera lagerfilen.");
                 continue;
             }
 
-            if (decimal.TryParse(productDataElementsArray[2], CultureInfo.InvariantCulture, out decimal productPrice)
-                    && int.TryParse(productDataElementsArray[3], out int productQuantity)) //Cred: https://stackoverflow.com/a/15897318
+            if (decimal.TryParse(productDataElementsArray[PRODUCT_PRICE_INDEX], CultureInfo.InvariantCulture, out decimal productPrice)
+                    && int.TryParse(productDataElementsArray[PRODUCT_QUANTITY_INDEX], out int productQuantity)) //Cred: https://stackoverflow.com/a/15897318
             {
                 // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
                 Product product = new Product
                 {
-                    Name = productDataElementsArray[0],
-                    Category = productDataElementsArray[1],
+                    Name = productDataElementsArray[PRODUCT_NAME_INDEX],
+                    Category = productDataElementsArray[PRODUCT_CATEGORY_INDEX],
                     Price = productPrice,
                     Quantity = productQuantity,
                 };
                 products.Add(product);
             }
             else
-                Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[0]}");
+                Console.WriteLine($"Fel format i datafil på prisuppgift eller antal för vara: {productDataElementsArray[PRODUCT_NAME_INDEX]}");
 
         }
         Console.WriteLine($"Totalt {products.Count} produkter inlästa");
@@ -50,28 +56,34 @@ public class InventoryManager
     {
         Console.WriteLine($"Läser in ordrar från {fileName}...");
 
+        const int ORDER_CUSTOMER_ID_INDEX = 0;
+        const int ORDER_CUSTOMER_NAME_INDEX = 1;
+        const int ORDER_PRODUCT_NAME_INDEX = 2;
+        const int ORDER_QUANTITY_INDEX = 3;
+        const int NUMBER_OF_EXPECTED_ORDER_DATA_ELEMENTS = 4;
+
         string[] ordersArray = File.ReadAllLines(fileName);
         orders = new List<Order>();
         foreach (string orderDataElementsString in ordersArray.Skip(1)) //Cred: https://stackoverflow.com/a/6429755
         {
             string[] orderDataElementsArray = orderDataElementsString.Split(',');
 
-            if (orderDataElementsArray.Length < 4)
+            if (orderDataElementsArray.Length < NUMBER_OF_EXPECTED_ORDER_DATA_ELEMENTS)
             {
-                Console.WriteLine($"Uppgift saknas för kunden {orderDataElementsArray[1]}.");
+                Console.WriteLine($"Uppgift saknas för kunden {orderDataElementsArray[ORDER_CUSTOMER_NAME_INDEX]}.");
                 Console.WriteLine("Vänligen kontrollera orderfilen.");
                 continue;
             }
 
-            if (int.TryParse(orderDataElementsArray[3], out int orderQuantity)) //Cred: https://stackoverflow.com/a/15897318
+            if (int.TryParse(orderDataElementsArray[ORDER_QUANTITY_INDEX], out int orderQuantity)) //Cred: https://stackoverflow.com/a/15897318
             {
 
                 // Generated with assistance from TabbyML/DeepSeekCoder-6.7B
                 Order order = new Order
                 {
-                    CustomerId = orderDataElementsArray[0],
-                    CustomerName = orderDataElementsArray[1],
-                    ProductName = orderDataElementsArray[2],
+                    CustomerId = orderDataElementsArray[ORDER_CUSTOMER_ID_INDEX],
+                    CustomerName = orderDataElementsArray[ORDER_CUSTOMER_NAME_INDEX],
+                    ProductName = orderDataElementsArray[ORDER_PRODUCT_NAME_INDEX],
                     QuantityOrdered = orderQuantity,
                 };
                 orders.Add(order);
@@ -145,10 +157,10 @@ public class InventoryManager
             for (int productIndex = 0; productIndex < products.Count; productIndex++)
             {
                 string[] productDataElementsArray = new string[4];
-                productDataElementsArray[0] = products[productIndex].Category??"";
-                productDataElementsArray[1] = products[productIndex].Name??"";
-                productDataElementsArray[2] = products[productIndex].Price.ToString("0.00", CultureInfo.InvariantCulture);
-                productDataElementsArray[3] = products[productIndex].Quantity.ToString();
+                productDataElementsArray[PRODUCT_NAME_INDEX] = products[productIndex].Name??"";
+                productDataElementsArray[PRODUCT_CATEGORY_INDEX] = products[productIndex].Category??"";
+                productDataElementsArray[PRODUCT_PRICE_INDEX] = products[productIndex].Price.ToString("0.00", CultureInfo.InvariantCulture);
+                productDataElementsArray[PRODUCT_QUANTITY_INDEX] = products[productIndex].Quantity.ToString();
 
                 productsArray[productIndex + 1] = String.Join(",", productDataElementsArray); // Add 1 to index since first element is headings
             }
