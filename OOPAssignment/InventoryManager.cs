@@ -89,8 +89,7 @@ public class InventoryManager
                 orders.Add(order);
             }
             else
-                Console.WriteLine($"Fel format i datafil på antal för order från {orderDataElementsArray[                    CustomerName = orderDataElementsArray[ORDER_CUSTOMER_NAME_INDEX],
-]}, {orderDataElementsArray[ORDER_PRODUCT_NAME_INDEX]}.");
+                Console.WriteLine($"Fel format i datafil på antal för order från {orderDataElementsArray[ORDER_CUSTOMER_NAME_INDEX]}, {orderDataElementsArray[ORDER_PRODUCT_NAME_INDEX]}.");
 
         }
         Console.WriteLine();
@@ -172,6 +171,3 @@ public class InventoryManager
         }
     }
 }
-
-
-
